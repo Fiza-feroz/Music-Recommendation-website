@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Music Recommendation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Welcome to Your Dashboard</h2>
+        <p>Choose your recommendation method:</p>
+        <button id="preferencesBtn">User Preferences</button>
+        <button id="faceRecBtn">Facial Recognition</button>
+
+        <!-- Chatbot Section -->
+        <div id="preferenceSection" class="section" style="display: none;">
+            <h3>Welcome to Chatbot , Type hi to start</h3>
+            <div id="chatbot">
+                <div id="chatbox"></div>
+                <input type="text" id="userInput" placeholder="Type your response here...">
+                <button onclick="handleChatInput()">Send</button>
+            </div>
+        </div>
+
+        <!-- Facial Recognition Section -->
+        <div id="faceRecSection" class="section" style="display: none;">
+            <h3>Facial Recognition</h3>
+            <button id="startCamera">Start Camera</button>
+            <video id="camera" autoplay style="display: none;"></video>
+            <button id="capturePhoto" style="display: none;" onclick="capturePhoto()">Capture</button>
+            <canvas id="canvas" style="display: none;"></canvas>
+            <p id="emotionResult"></p>
+        </div>
+    </div>
+
+    <!-- Load face-api.js for facial expression detection -->
+    <script src="https://cdn.jsdelivr.net/npm/@vladmandic/face-api@latest/dist/face-api.min.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+</html>
